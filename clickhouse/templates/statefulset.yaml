@@ -23,6 +23,9 @@ spec:
       nodeSelector:
 {{ toYaml .Values.clickhouse.nodeSelector | indent 8 }}
       {{- end }}
+      {{- if .Values.clickhouse.nodeName }}
+      nodeName: {{ .Values.clickhouse.nodeName }}
+      {{- end }}
       {{- if .Values.clickhouse.tolerations }}
       tolerations:
 {{ toYaml .Values.clickhouse.tolerations | indent 8 }}
