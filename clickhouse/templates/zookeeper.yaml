@@ -38,6 +38,9 @@ spec:
       nodeSelector:
 {{ toYaml .Values.zookeeper.nodeSelector | indent 8 }}
       {{- end }}
+      {{- if .Values.zookeeper.nodeName }}
+      nodeName: {{ .Values.zookeeper.nodeName }}
+      {{- end }}
       {{- if .Values.zookeeper.tolerations }}
       tolerations:
 {{ toYaml .Values.zookeeper.tolerations | indent 8 }}
