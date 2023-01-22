@@ -40,9 +40,10 @@ clickhouse:
     accessModes:
       - ReadWriteOnce
     size: 1Gi
-    
-    ## Custom Volumes
-    volumes: []
+  
+  ## Custom Volumes
+  volumes: []
+  
   ## Node selector
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
   nodeSelector: {}
@@ -77,6 +78,7 @@ zookeeper:
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
   persistence:
+    claim: true
     ## The path the volume will be mounted at
     mountPath: /var/lib/zookeeper
 
@@ -90,7 +92,9 @@ zookeeper:
     accessModes:
       - ReadWriteOnce
     size: 1Gi
-
+  ## Custom Volumes
+  volumes: []
+  
   ## Node selector
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
   nodeSelector: {}
