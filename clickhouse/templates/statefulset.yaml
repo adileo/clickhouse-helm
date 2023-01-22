@@ -31,7 +31,7 @@ spec:
         - name: clickhouse-configd
           configMap:
             name: clickhouse-configd
-        {{ toYaml .Values.clickhouse.persistence.volumes | indent 8 }}
+        {{ toYaml .Values.clickhouse.volumes | indent 8 }}
       containers:
         - name: clickhouse-server
           image: "{{ .Values.clickhouse.repository }}:{{ .Values.clickhouse.tag }}"
